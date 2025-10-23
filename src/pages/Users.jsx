@@ -16,24 +16,24 @@ function Users() {
 
   return (
     <>
-     <table border={1} cellPadding={8} cellSpacing={0}>
+     <table border={1} cellPadding={8} cellSpacing={0} style={styles.table}>
         <thead>
         <tr>
-            <th>User ID</th>
-            <th>User Name</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Role</th>
+            <th style={styles.th}>User ID</th>
+            <th style={styles.th}>User Name</th>
+            <th style={styles.th}>Email</th>
+            <th style={styles.th}>Password</th>
+            <th style={styles.th}>Role</th>
         </tr>
         </thead>
         <tbody>
-            {users.map((user) => (
-            <tr key={user._id}>
-                <td>{user._id}</td>
-                <td>{user.username}</td>
-                <td>{user.email}</td>
-                <td>{user.password}</td>
-                <td>{user.role}</td>
+            {users.map((user, index) => (
+            <tr key={user._id} style={index % 2 ? styles.trHover : null}>
+                <td style={styles.td}>{user._id}</td>
+                <td style={styles.td}>{user.username}</td>
+                <td style={styles.td}>{user.email}</td>
+                <td style={styles.td}>{user.password}</td>
+                <td style={styles.td}>{user.role}</td>
             </tr>
             ))}
         </tbody>
@@ -41,5 +41,30 @@ function Users() {
     </>
   )
 }
+
+const styles = {
+  table: {
+    borderCollapse: "collapse",
+    width: "100%",
+    marginTop: "20px",
+    fontFamily: "Arial, sans-serif",
+  },
+  th: {
+    border: "1px solid #dddddd",
+    textAlign: "left",
+    padding: "8px",
+    backgroundColor: "#4CAF50",
+    color: "white",
+  },
+  td: {
+    border: "1px solid #dddddd",
+    textAlign: "left",
+    padding: "8px",
+  },
+  trHover: {
+    backgroundColor: "#f5f5f5",
+    cursor: "pointer",
+  },
+};
 
 export default Users
