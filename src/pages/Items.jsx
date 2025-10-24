@@ -34,6 +34,7 @@ function Items() {
             <th style={styles.th}>Created At</th>
           </tr>
         </thead>
+        <tbody>
         {items.map((item, index) => (
           <tr key={item._id} style={index % 2 ? styles.trHover : null}>
             <td style={styles.td}>{item._id}</td>
@@ -48,6 +49,7 @@ function Items() {
             </td>
           </tr>
         ))}
+        </tbody>
       </table>
     </>
   );
