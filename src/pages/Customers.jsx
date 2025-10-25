@@ -10,7 +10,7 @@ function Customers() {
     const fetchCustomers = async () => {
       const response = await fetch('http://localhost:3000/api/customers')
       const customerData = await response.json()
-      console.log(customerData)
+      console.log('Customers:', customerData)
       setCustomers(customerData)
     }
 

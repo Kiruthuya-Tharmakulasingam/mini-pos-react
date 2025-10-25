@@ -10,7 +10,7 @@ function Sales() {
     const fetchSales = async () => {
       const response = await fetch('http://localhost:3000/api/sales')
       const saleData = await response.json()
-      console.log('Fetched sales:', saleData)
+      console.log('Sales:', saleData)
        if (saleData.success && Array.isArray(saleData.sales)) {
       setSales(saleData.sales)
     } else {

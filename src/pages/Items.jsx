@@ -10,7 +10,7 @@ function Items() {
   const fetchItems = async () => {
     const response = await fetch("http://localhost:3000/api/items");
     const itemsData = await response.json();
-    console.log(itemsData);
+    console.log('Items:' , itemsData);
 
     if (itemsData.success && Array.isArray(itemsData.items)) {
       setItems(itemsData.items);

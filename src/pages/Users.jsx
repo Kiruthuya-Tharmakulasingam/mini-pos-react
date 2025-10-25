@@ -10,7 +10,7 @@ function Users() {
     const fetchUsers = async () => {
       const response = await fetch('http://localhost:3000/api/users')
       const userData = await response.json()
-      console.log(userData)
+      console.log('Users:',userData)
       setUsers(userData)
     }
 
